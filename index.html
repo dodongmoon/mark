@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마가복음 성경 퀴즈</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            <svg class="lion-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <radialGradient id="maneGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#f7d79a"/>
+                        <stop offset="100%" stop-color="#b97a30"/>
+                    </radialGradient>
+                </defs>
+                <circle cx="50" cy="50" r="34" fill="url(#maneGradient)"/>
+                <ellipse cx="50" cy="54" rx="20" ry="18" fill="#f2dfbd"/>
+                <circle cx="42" cy="50" r="3" fill="#3a2613"/>
+                <circle cx="58" cy="50" r="3" fill="#3a2613"/>
+                <path d="M50 52 L46 58 L54 58 Z" fill="#5b3716"/>
+                <path d="M43 63 Q50 68 57 63" stroke="#5b3716" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+                <circle cx="32" cy="35" r="6" fill="#d9a45a"/>
+                <circle cx="68" cy="35" r="6" fill="#d9a45a"/>
+            </svg>
+
+            <img id="sugar-photo"
+                 src=""
+                 alt="Sugar the dog"
+                 style="display:none; position: fixed; top: 10%; left: 50%; transform: translateX(-50%); width: 80vw; max-width: 900px; height: auto; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); z-index: 9999;">
+
+            마가복음 성경 퀴즈
+        </h1>
+    </header>
+
+    <main>
+        <div id="chapter-selection">
+            <h2>장 선택</h2>
+            <div id="chapter-buttons">
+                <!-- 챕터 버튼들(1~24)이 JS로 생성됩니다 -->
+            </div>
+            <div id="special-quiz-buttons" class="button-group">
+                <button id="church-quiz-btn" class="special-quiz-btn">온양제일교회 기출</button>
+                <button id="ai-quiz-btn" class="special-quiz-btn">AI기출변형</button>
+            </div>
+        </div>
+
+        <div id="content-options" class="hidden">
+            <button data-content="summary" id="summary-btn">AI 요약</button>
+            <button data-content="quiz">퀴즈</button>
+            <button data-content="flashcards">깜빡이</button>
+        </div>
+
+        <div id="content-display" class="hidden">
+            <div id="summary-content" class="content-section hidden">
+                <h2>AI 요약</h2>
+                <img id="summary-image" src="" alt="Chapter Summary Image">
+                <div id="summary-version-buttons" class="button-group">
+                    <button data-version="child" class="summary-version-btn">어린양 ver</button>
+                    <button data-version="adult" class="summary-version-btn">💪장성한 양 ver</button>
+                </div>
+                <p id="summary-text-adult" class="summary-text-version hidden"></p>
+                <p id="summary-text-child" class="summary-text-version hidden"></p>
+            </div>
+
+            <div id="quiz-content" class="content-section hidden">
+                <h2>퀴즈</h2>
+                <div id="quiz-questions"></div>
+            </div>
+
+            <div id="flashcards-content" class="content-section hidden">
+                <h2>깜빡이 (Flashcards)</h2>
+                <div id="flashcard-controls">
+                    <div class="speed-controls button-group">
+                        <button class="speed-btn" data-speed="fast">Fast (1.5s)</button>
+                        <button class="speed-btn active" data-speed="normal">Normal (2.5s)</button>
+                        <button class="speed-btn" data-speed="slow">Slow (4.5s)</button>
+                    </div>
+                    <div id="flashcard-main-controls" class="button-group">
+                        <button id="start-flashcards">시작</button>
+                        <button id="stop-flashcards" disabled>정지</button>
+                        <button id="restart-flashcards" disabled>다시하기</button>
+                    </div>
+                </div>
+                <div id="flashcard-display">
+                    <p id="flashcard-question"></p>
+                    <p id="flashcard-answer"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 호날두정신. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
