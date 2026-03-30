@@ -3969,32 +3969,6 @@ const restartFlashcardsBtn = document.getElementById('restart-flashcards');
  ***********************************************/
 let currentQuizType = null;  // 'chapter' | 'church' | 'ai'
 
-const markChapterQuizRanges = {
-    1: [1, 12],
-    2: [13, 20],
-    3: [21, 28],
-    4: [29, 37],
-    5: [38, 45],
-    6: [46, 53],
-    7: [54, 58],
-    8: [59, 66],
-    9: [67, 73],
-    10: [74, 88],
-    11: [89, 91],
-    12: [92, 100],
-    13: [101, 109],
-    14: [110, 124],
-    15: [125, 136],
-    16: [137, 140],
-};
-
-const markChapterQuizData = Object.fromEntries(
-    Object.entries(markChapterQuizRanges).map(([chapter, [start, end]]) => [
-        Number(chapter),
-        churchQuizData.slice(start - 1, end),
-    ])
-);
-
 let currentChapter = null;
 
 // 실제 퀴즈/플래시카드용 배열
@@ -4048,8 +4022,7 @@ function handleChapterClick(event) {
     if (!data) return;
 
     // 현재 퀴즈용 데이터 설정
-    const mappedQuiz = markChapterQuizData[currentChapter];
-    currentQuizData = (mappedQuiz && mappedQuiz.length > 0) ? mappedQuiz : (data.quiz || []);
+    currentQuizData = data.quiz || [];
 
     // 요약 데이터가 있는지 여부에 따라 요약 버튼 표시
     const hasSummary = !!(data.summary_child || data.summary_adult);
