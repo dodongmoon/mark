@@ -453,6 +453,44 @@ button.disabled {
     font-size: 1.05rem;
 }
 
+.adult-summary-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.adult-summary-header-row h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.easy-bible-toggle-btn {
+    padding: 7px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #e6d0ab, #d6b585);
+    border: 1px solid #b98d53;
+    color: #4a2d12;
+}
+
+.easy-bible-range-box {
+    display: none;
+    margin-top: 10px;
+    padding: 11px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(185, 141, 83, 0.35);
+    background: #fffaf0;
+    white-space: pre-wrap;
+    color: #4a311a;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.easy-bible-range-box.visible {
+    display: block;
+}
+
 .adult-summary-container .section-number {
     display: inline-flex;
     align-items: center;
@@ -536,5 +574,14 @@ footer {
 
     #flashcard-answer {
         font-size: 1.04rem;
+    }
+
+    .adult-summary-header-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .easy-bible-toggle-btn {
+        width: 100%;
     }
 }
