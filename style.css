@@ -465,6 +465,12 @@ button.disabled {
     flex: 1;
 }
 
+.scripture-toggle-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
 .easy-bible-toggle-btn {
     padding: 7px 12px;
     font-size: 0.85rem;
@@ -472,6 +478,15 @@ button.disabled {
     background: linear-gradient(180deg, #e6d0ab, #d6b585);
     border: 1px solid #b98d53;
     color: #4a2d12;
+}
+
+.gaejeong-toggle-btn {
+    padding: 7px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #d8e0c7, #becaa7);
+    border: 1px solid #8ea175;
+    color: #2e3c20;
 }
 
 .easy-bible-range-box {
@@ -488,6 +503,23 @@ button.disabled {
 }
 
 .easy-bible-range-box.visible {
+    display: block;
+}
+
+.gaejeong-range-box {
+    display: none;
+    margin-top: 10px;
+    padding: 11px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(142, 161, 117, 0.4);
+    background: #f6faef;
+    white-space: pre-wrap;
+    color: #2f3f22;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.gaejeong-range-box.visible {
     display: block;
 }
 
@@ -581,7 +613,8 @@ footer {
         align-items: stretch;
     }
 
-    .easy-bible-toggle-btn {
+    .easy-bible-toggle-btn,
+    .gaejeong-toggle-btn {
         width: 100%;
     }
 }
